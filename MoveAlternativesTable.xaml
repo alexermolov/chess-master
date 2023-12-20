@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="ChessMaster.MoveAlternativesTable"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ChessMaster"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Width="auto"
+             Height="auto"
+ >
+    <UserControl.Resources>
+        <local:ConfigToDynamicGridViewConverter x:Key="ConfigToDynamicGridViewConverter" />
+
+        <Style x:Key="MyDataGridCell" TargetType="DataGridCell" BasedOn="{StaticResource {x:Type DataGridCell}}">
+
+            <Setter Property="Background" Value="Gray"/>
+            <!--<Setter Property="VerticalContentAlignment" Value="Center"/> -->
+            <Setter Property="BorderBrush" Value="Gray" /> 
+            <!-- <Setter Property="BorderThickness" Value="0.5" /> -->
+           
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="Gray"/>    
+                    <Setter Property="Foreground" Value="BlanchedAlmond"/>
+                    <Setter Property="BorderThickness" Value="2" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+    
+    <Grid Height="auto" Width="auto" x:Name="GridControl">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <DataGrid 
+            x:Name="MovesDataGrid" 
+            SelectionMode="Single" 
+            Height="auto"
+            Width="auto" 
+            CellStyle="{StaticResource MyDataGridCell}"
+            CanUserResizeColumns="False"
+            CanUserReorderColumns="False"
+            CanUserSortColumns="False"
+            CanUserDeleteRows="False"
+            CanUserResizeRows="False"
+            IsReadOnly="True"
+            ScrollViewer.CanContentScroll="True" 
+            ScrollViewer.VerticalScrollBarVisibility="Auto"
+        />
+    </Grid>
+</UserControl>

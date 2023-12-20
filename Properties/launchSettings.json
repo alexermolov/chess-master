@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ChessMaster": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    }
+  }
+}
