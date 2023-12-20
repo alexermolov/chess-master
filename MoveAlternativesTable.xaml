@@ -46,8 +46,7 @@
             CanUserDeleteRows="False"
             CanUserResizeRows="False"
             IsReadOnly="True"
-            ScrollViewer.CanContentScroll="True" 
-            ScrollViewer.VerticalScrollBarVisibility="Auto"
+            BorderThickness="0"
         />
     </Grid>
 </UserControl>
