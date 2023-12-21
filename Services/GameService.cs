@@ -8,5 +8,7 @@ namespace ChessMaster.Services
     public static class GameService
     {
         public static List<PgnGame> Games { get; set; } = new List<PgnGame>();
+
+        public static bool NewlyInitialized { get; set; }
     }
 }

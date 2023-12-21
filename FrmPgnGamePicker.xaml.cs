@@ -211,7 +211,7 @@ namespace ChessMaster
             {
                 parser = new PgnParser(false);
                 parser.InitFromString(game);
-                if (!parser.ParseSingle(noMoveList, true, out int skip, out int truncated, out PgnGame? pgnGame, out string? errTxt))
+                if (!parser.ParseSingle(noMoveList, false, out int skip, out int truncated, out PgnGame? pgnGame, out string? errTxt))
                 {
                     MessageBox.Show($"The specified board is invalid - {errTxt ?? ""}");
                 }
@@ -242,6 +242,7 @@ namespace ChessMaster
                     Close();
                 }
             }
+
         }
 
         /// <summary>

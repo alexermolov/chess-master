@@ -1261,6 +1261,8 @@ namespace ChessMaster
                     {
                         if (pickerFrm.ShowDialog() == true)
                         {
+                            ResetBoard();
+
                             CreateGameFromMove(pickerFrm.StartingChessBoard,
                                                pickerFrm.MoveList!,
                                                pickerFrm.StartingColor,
@@ -1271,6 +1273,7 @@ namespace ChessMaster
                                                pickerFrm.WhiteTimer,
                                                pickerFrm.BlackTimer);
                             retVal = true;
+                            
                         }
                     }
                 }

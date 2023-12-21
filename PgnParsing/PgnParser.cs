@@ -884,7 +884,9 @@ namespace ChessMaster.PgnParsing
 
                 if (save)
                 {
-                    GameService.Games.AddRange(result.OrderBy(x => x.SanMovesTxt).ToList());
+                    GameService.Games.Clear();
+                    GameService.Games.AddRange(result.DistinctBy(x => x.SanMovesTxt).OrderBy(x => x.SanMovesTxt).ToList());
+                    GameService.NewlyInitialized = true;
                 }
 
                 foreach (var item in result)

@@ -138,10 +138,14 @@ namespace ChessMaster
 
         public void LoadMovesToGrid()
         {
-            if (MovesDataGrid.Items.Count > 0)
+            if (!GameService.NewlyInitialized)
             {
                 return;
             }
+
+            GameService.NewlyInitialized = false;
+            MovesDataGrid.Columns.Clear();
+            MovesDataGrid.Items.Clear();
 
             var games = GameService.Games;
 
